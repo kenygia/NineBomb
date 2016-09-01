@@ -16,8 +16,10 @@ public class Moteur {
 		int cpt=0;
 		while(nbMorts<this.liste.size()-1){
 			//debut du jeu
-			
-			
+			int actions = this.liste.get(cpt).nbAction;
+			while(actions>0){
+				
+			}
 			
 			//fin de la boucle
 			nbMorts=0;
