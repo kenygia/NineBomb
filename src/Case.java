@@ -25,7 +25,7 @@ public class Case {
 			return '1';
 		}else if(this.perso.nom.equals("Player 2")){
 			return '2';
-		}else if(this.bombe.name == 'B'){
+		}else if(this.bombe.getName() == 'B'){
 			return 'B';
 		}else if(!(this.item.equals(null))){
 			if (this.item instanceof BombDown){
@@ -51,7 +51,7 @@ public class Case {
 	public boolean Blocage (){
 		if(this.laCase == 'D' || this.laCase == 'I'|| !(this.bombe.equals(null))){
 			return true;
-		}else{ //Attention à null
+		}else{ 
 			return false;
 		}
 	}
