@@ -10,4 +10,8 @@ public class Personnage {
 	public Personnage(String chaine){
 		nom=chaine;
 	}
+	
+	public char getToucheBombe(){
+		return this.touche[this.touche.length-1];
+	}
 }
