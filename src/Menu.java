@@ -6,14 +6,14 @@ public class Menu
 {
 
 	private Personnage p;
-	private Plateau m;
+	private Plateau plateau;
 	public static Scanner scan = new Scanner(System.in);
 	private Random rand;
 	
 	public Menu(Personnage perso, Plateau map)
 	{
 		this.p = perso;
-		this.m = map;
+		this.plateau = map;
 	}
 
 	// deplacement 
@@ -23,7 +23,7 @@ public class Menu
 		int [] mod = new int[] {0, -1};
 		if (this.checkDeplaceNORD())
 		{
-			m.deplace(p.getCoords(), mod);
+			plateau.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 	}
@@ -33,7 +33,7 @@ public class Menu
 		int [] mod = new int[] {1, 0};
 		if (this.checkDeplaceEST())
 		{
-			m.deplace(p.getCoords(), mod);
+			plateau.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -44,7 +44,7 @@ public class Menu
 		int [] mod = new int[] {0, 1};
 		if (this.checkDeplaceSUD())
 		{
-			m.deplace(p.getCoords(), mod);
+			plateau.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -55,7 +55,7 @@ public class Menu
 		int [] mod = new int[] {-1, 0};
 		if (this.checkDeplaceOUEST())
 		{
-			m.deplace(p.getCoords(), mod);
+			plateau.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -66,25 +66,25 @@ public class Menu
 	public boolean checkDeplaceNORD()
 	{
 		int [] mod = new int[] {0, -1};
-		return this.m.checkPerso(this.p, mod);
+		return this.plateau.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceEST()
 	{
 		int [] mod = new int[] {1, 0};
-		return this.m.checkPerso(this.p, mod);
+		return this.plateau.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceSUD()
 	{
 		int [] mod = new int[] {0, 1};
-		return this.m.checkPerso(this.p, mod);
+		return this.plateau.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceOUEST()
 	{
 		int [] mod = new int[] {-1, 0};
-		return this.m.checkPerso(this.p, mod);
+		return this.plateau.checkPerso(this.p, mod);
 	}
 	
 	
@@ -93,7 +93,7 @@ public class Menu
 	public void poserBomb()
 	{
 		Bombe b = new Bombe(p.getCoords());
-		m.getCase(p.getCoords()[0], p.getCoords()[1]).setBombe(b);
+		plateau.getCase(p.getCoords()[0], p.getCoords()[1]).setBombe(b);
 	}
 	
 	//affich
