@@ -1,8 +1,11 @@
 
-public class Plateau {
+public class Plateau 
+{
 
-	public Plateau() {
+	public Plateau()
+	{
 		// TODO Auto-generated constructor stub
+		
 	}
 
 }

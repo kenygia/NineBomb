@@ -1,7 +1,9 @@
 
-public class Player {
+public class Player 
+{
 
-	public Player() {
+	public Player() 
+	{
 		// TODO Auto-generated constructor stub
 		//TRACE
 	}
