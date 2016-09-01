@@ -78,7 +78,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteBombDown(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new BombDown();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('e',c4.Priorite());
@@ -86,7 +85,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteBombUp(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new BombUp();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('E',c4.Priorite());
@@ -94,7 +92,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteFireDown(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new FireDown();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('f',c4.Priorite());
@@ -102,7 +99,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteFireUp(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new FireUp();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('F',c4.Priorite());
@@ -110,7 +106,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteSkull(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new Skull();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('D',c4.Priorite());
@@ -118,7 +113,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteSpeedDown(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new SpeedDown();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('s',c4.Priorite());
@@ -126,7 +120,6 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteVide(){
-		Personnage perso4 = new Personnage("P");
 		Item i4 = new SpeedUp();
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('S',c4.Priorite());
