@@ -4,6 +4,7 @@ public class Personnage {
 	boolean mort;
 	String nom ;
 	int[] coords;
+	int nbAction = 2;
 	
 	public Personnage(){
 		this.mort=false;
