@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Moteur {
@@ -35,9 +39,21 @@ public class Moteur {
 	}
 	
 	public static char[] getTouches(){
-		
-		
-		
-		return null;
+		BufferedReader text;
+		try {
+			text = new BufferedReader(new FileReader("./ressources/touches"));
+		} catch (FileNotFoundException e) {
+			text = null;
+		}
+		char[] touches = new char[5];
+		for(int i=0;i<touches.length;i++){
+			try {
+				touches[i] = text.readLine().charAt(0);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		return touches;
 	}
 }
