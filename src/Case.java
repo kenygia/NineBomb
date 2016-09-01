@@ -16,7 +16,11 @@ public class Case {
 	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
 		this.setBombe(bombe);
-		this.setLaCase(laCase);
+		if(typeCase == '\0'){
+			this.setLaCase(laCase);
+		}else{
+			this.setLaCase(typeCase);
+		}
 		this.setItem(item);
 	}
 	
