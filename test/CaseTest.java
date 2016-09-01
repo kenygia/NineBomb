@@ -76,12 +76,12 @@ public class CaseTest {
 		assertEquals('B',c3.Priorite());
 	}
 	
-/*	@Test
+	@Test
 	public void testPrioriteBombDown(){
 		Personnage perso4 = new Personnage("P");
 		Case c4 = new Case(perso4,null,laCase,null);
 		assertEquals('e',c4.Priorite());
-	}*/
+	}
 	
 	//Tests bonus et malus a faire
 }
