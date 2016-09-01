@@ -21,18 +21,20 @@ public class Case {
 	}
 	
 	public char Priorite(){ 
-		if(!(this.perso.equals(null))){
+		if(this.laCase == 'I' || this.laCase == 'D'){
+			return this.getLaCase();
+		}else if(!(this.perso == null)){
 			if(this.perso.getNom().equals("Player 1")){ 
 				return '1';
 			}else if(this.perso.getNom().equals("Player 2")){
 				return '2';
 			}
-		}else if (!(this.bombe.equals(null))){		
+		}else if (!(this.bombe == null)){		
 			if(this.bombe.getName() == 'B'){
 				return 'B';
 			}
 
-		}else if(!(this.item.equals(null))){
+		}else if(!(this.item == null)){
 			if (this.item instanceof BombDown){
 				return 'e';
 			}else if(this.item instanceof BombUp){
