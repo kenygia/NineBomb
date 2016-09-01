@@ -1,27 +1,26 @@
 
 public class Personnage {
-	char[] touche = new char[]{'z','q','s','d',' '};
-	int[][] deplacement = new int[][]{{0,-1},{-1,0},{0,1},{1,0},{0,0}};
+	
+	boolean mort;
 	String nom ;
 	int[] coords;
 	
 	public Personnage(){
+		this.mort=false;
 		nom="Player 1";
 		this.coords = new int[]{0,0};
 	}
 	
 	public Personnage(String chaine){
+		this.mort=false;
 		nom=chaine;
 		this.coords = new int[]{0,0};
 	}
 	
 	public Personnage(String chaine, int[]coords){
+		this.mort=false;
 		this.nom=chaine;
 		this.coords=coords;
-	}
-	
-	public char getToucheBombe(){
-		return this.touche[this.touche.length-1];
 	}
 	
 	public void setCoords(int[]coords){
@@ -30,14 +29,5 @@ public class Personnage {
 	
 	public int[]getCoords(){
 		return this.coords;
-	}
-	
-	public int[] getDeplacement(char c){
-		for(int i=0;i<this.touche.length-1;i++){
-			if(this.touche[i]==c){
-				return this.deplacement[i];
-			}
-		}
-		return new int[]{0,0};
 	}
 }

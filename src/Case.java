@@ -1,64 +1,71 @@
 
 public class Case {
 
-	private boolean perso;
-	private boolean bombe;
-	private boolean typeCase; //vide, rocher destructible ou indestructible
-	private boolean item;
+	private Personnage perso;
+	private Bombe bombe;
 	
-	public Case (boolean perso, boolean bombe, boolean typeCase, boolean item){
+	private Item item;
+	private char laCase;
+	
+	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
 		this.setBombe(bombe);
-		this.setTypeCase(typeCase);
+		if (typeCase == 'I'){
+			this.laCase = 'I';
+		}else if (typeCase == 'D'){
+			this.laCase = 'D';
+		}else { //V
+			this.laCase = 'V';
+		}
+		this.setLaCase(typeCase);
 		this.setItem(item);
 	}
 	
 	public char Priorite (){
 		for(int i = 0 ; i < 4; i++){
-			if(this.perso){
-				return 'P';
-			}else if(this.bombe){
+			if(this.perso.nom.equals("Player 1")){
+				return '1';
+			}else if(this.perso.nom.equals("Player 2")){
+				return '2';
+			}
+			else if(this.bombe){
 				return 'B';
 			}else if(this.item){
-				return 'I'
-			}else if
+				return 
+			}else if()
 		}
 	}
 	
-	/*
-	 * GETTERS AND SETTERS
-	 */
-
-	public boolean isPerso() {
+	public Personnage getPerso() {
 		return perso;
 	}
 
-	public void setPerso(boolean perso) {
+	public void setPerso(Personnage perso) {
 		this.perso = perso;
 	}
 
-	public boolean isBombe() {
+	public Bombe getBombe() {
 		return bombe;
 	}
 
-	public void setBombe(boolean bombe) {
+	public void setBombe(Bombe bombe) {
 		this.bombe = bombe;
 	}
 
-	public boolean isTypeCase() {
-		return typeCase;
-	}
-
-	public void setTypeCase(boolean typeCase) {
-		this.typeCase = typeCase;
-	}
-
-	public boolean isItem() {
+	public Item getItem() {
 		return item;
 	}
 
-	public void setItem(boolean item) {
+	public void setItem(Item item) {
 		this.item = item;
+	}
+
+	public char getLaCase() {
+		return laCase;
+	}
+
+	public void setLaCase(char laCase) {
+		this.laCase = laCase;
 	}
 	
 }

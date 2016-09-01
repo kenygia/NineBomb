@@ -10,7 +10,7 @@ public class Moteur {
 		//Appel de la fonction de prises de touches
 	}
 	
-	public void action(char c){
+	public void action(){
 		if(c==this.perso.getToucheBombe()){
 			
 		}else{
