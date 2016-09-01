@@ -5,6 +5,7 @@ public class Personnage {
 	String nom ;
 	int[] coords;
 	int nbAction = 2;
+	boolean botAuto = false;
 	
 	public Personnage(){
 		this.mort=false;
