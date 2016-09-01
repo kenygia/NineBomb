@@ -15,9 +15,9 @@ public class Case {
 	}
 	
 	public char Priorite (){ 
-		if(this.perso.nom.equals("Player 1")){ //Attention à null
+		if(this.perso.getNom().equals("Player 1")){ //Attention à null
 			return '1';
-		}else if(this.perso.nom.equals("Player 2")){
+		}else if(this.perso.getNom().equals("Player 2")){
 			return '2';
 		}else if(this.bombe.getName() == 'B'){
 			return 'B';

@@ -43,9 +43,14 @@ public class Plateau {
 		return false;
 	}
 	
-	public char retourVal (int x, int y){
+	public char getChar(int x, int y){
 		return this.theMap[x][y].Priorite();
 	}
+	
+	public Case getCase(int x, int y){
+		return this.theMap[x][y];
+	}
+	
 	
 	public int[][] size(){
 		return new int [this.longueur][this.largeur];
