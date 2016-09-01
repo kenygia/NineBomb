@@ -1,29 +1,16 @@
+import java.util.ArrayList;
+
 public class Moteur {
 
-	Personnage perso;
-	Plateau map;
+	ArrayList<Personnage> liste;
+	static Plateau map;
 	
-	public Moteur(Personnage perso, Plateau map){
-		this.perso = perso;
+	public Moteur(Plateau map){
+		this.liste.add(new Personnage("Player 1"));
+		this.liste.add(new Personnage("Player 1"));
 		this.map = map;
-		
 		//Appel de la fonction de prises de touches
 	}
 	
-	public void action(){
-		if(c==this.perso.getToucheBombe()){
-			
-		}else{
-			int[]pos = perso.getCoords();
-			int[]deplace = perso.getDeplacement(c);
-			int[] newPos = new int[]{pos[0]+deplace[0],pos[1]+deplace[1]};
-			if(newPos[0]>=map.size() || newPos[0]<0 || newPos[1]>=map.size() || newPos[1]<0){
-				//Aucune action
-			}else{
-				map[pos[0]][pos[1]] = ' '; //Espace vide
-				map[newPos[0]][newPos[1]]='p'; 
-			}
-			
-		}
-	}
+	
 }
