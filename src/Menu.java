@@ -104,9 +104,9 @@ public class Menu
 
 		tab[0] = false;
 		tab[1] = this.checkDeplaceNORD();
-		tab[2] = this.checkDeplaceNORD();
-		tab[3] = this.checkDeplaceNORD();
-		tab[4] = this.checkDeplaceNORD();
+		tab[2] = this.checkDeplaceEST();
+		tab[3] = this.checkDeplaceSUD();
+		tab[4] = this.checkDeplaceOUEST();
 		tab[5] = true;
 		
 		int t = 0;
