@@ -66,9 +66,7 @@ public class Plateau {
 	{
 		int x = p.getCoords()[0]+mod[0];
 		int y = p.getCoords()[1]+mod[1];
-		if ((largeur > y) && (longueur > x) && (x >= 0) && (y >= 0))
-			return !(this.theMap[x][y].Blocage());
-		return false;
+		return this.theMap[x][y].Blocage();
 	}
 	
 	public char getChar(int x, int y){
