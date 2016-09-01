@@ -10,11 +10,12 @@ public class PersonnageTest {
 	@Test
 	public void testSetCoords(){
 		perso.setCoords(coo);
-		assertEquals(perso.coords, coo);
+		assertEquals(perso.getCoords(), coo);
 	}
 	
 	@Test
 	public void testGetCoords(){
-		assertEquals(perso.coords, perso.getCoords());
+		perso.setCoords(coo);
+		assertEquals(coo, perso.getCoords());
 	}
 }
