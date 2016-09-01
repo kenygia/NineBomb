@@ -3,11 +3,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Moteur {
 
 	ArrayList<Personnage> liste = new ArrayList<>();
 	static Plateau plateau;
+	static char[]touches;
 	int nbMorts;
 	
 	public Moteur(){
@@ -17,6 +19,7 @@ public class Moteur {
 	}
 	
 	public Moteur(Personnage p1, Personnage p2){
+		touches = this.getTouches();
 		this.liste.add(p1);
 		this.liste.add(p2);
 		this.plateau = new Plateau(p1, p2);
@@ -25,12 +28,12 @@ public class Moteur {
 		
 		int cpt=0;
 		while(!finDePartie()){
-			System.out.println("lol");
 			//debut du jeu
 			int actions = this.liste.get(cpt).getNbAction();
 			while(actions>0){
 				//tour dun joueur
-				
+				this.priseDeTouches();
+				actions--;
 			}
 			
 			//fin de la boucle
@@ -51,7 +54,7 @@ public class Moteur {
 		return this.nbMorts>=this.liste.size()-1;
 	}
 	
-	public static char[] getTouches(){
+	public char[] getTouches(){
 		BufferedReader text;
 		try {
 			text = new BufferedReader(new FileReader("./ressources/touches"));
@@ -68,6 +71,19 @@ public class Moteur {
 			
 		}
 		return touches;
+	}
+	
+	public void priseDeTouches(){
+		Scanner sc = new Scanner(System.in);
+		char c = 0;
+		while(c==0){
+			try{
+				c=sc.nextLine().charAt(0);
+			}catch(StringIndexOutOfBoundsException e){
+				
+			}
+		}
+		System.out.println(c);
 	}
 	
 	public static void main(String[]args){
