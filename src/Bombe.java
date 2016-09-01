@@ -1,8 +1,14 @@
-public class Bombe extends Item{
+public class Bombe 
+{
 	
-	int[] coords;
-	int portee=1;
-	char name='B';
+	private int[] coords;
+	private int portee=1;
+	private char name='B';
+	
+	public Bombe(int[]c)
+	{
+		this.setCoords(c);
+	}
 	
 	public void setCoords(int[]coords){
 		this.coords=coords;
@@ -12,7 +18,15 @@ public class Bombe extends Item{
 		return this.coords;
 	}
 
-	public String Action() {
-		return null;
+	public char getName()
+	{
+		return this.name;
+	}
+
+	
+	public int getPortee()
+	{
+		return this.portee;
 	}
 }
+
