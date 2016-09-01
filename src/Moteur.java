@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Moteur {
 
-	ArrayList<Personnage> liste;
+	ArrayList<Personnage> liste = new ArrayList<>();
 	static Plateau plateau;
 	int nbMorts;
 	
@@ -25,6 +25,7 @@ public class Moteur {
 		
 		int cpt=0;
 		while(!finDePartie()){
+			System.out.println("lol");
 			//debut du jeu
 			int actions = this.liste.get(cpt).getNbAction();
 			while(actions>0){
@@ -47,7 +48,7 @@ public class Moteur {
 	}
 	
 	public boolean finDePartie(){
-		return this.nbMorts<this.liste.size()-1;
+		return this.nbMorts>=this.liste.size()-1;
 	}
 	
 	public static char[] getTouches(){
@@ -70,6 +71,8 @@ public class Moteur {
 	}
 	
 	public static void main(String[]args){
-		
+		Personnage p1 = new Personnage("Player1");
+		Personnage p2 = new Personnage("Player2");
+		new Moteur(p1,p2);
 	}
 }

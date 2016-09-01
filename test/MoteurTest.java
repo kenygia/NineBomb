@@ -14,7 +14,7 @@ public class MoteurTest {
 	
 	@Test
 	public void testFinDePartieFaux(){
-		moteur.nbMorts=1;
+		moteur.nbMorts=2;
 		assertTrue(moteur.finDePartie());
 	}
 
