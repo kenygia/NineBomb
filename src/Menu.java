@@ -23,7 +23,7 @@ public class Menu
 		int [] mod = new int[] {0, -1};
 		if (this.checkDeplaceNORD())
 		{
-			m.deplace(p.coords, mod);
+			m.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 	}
@@ -33,7 +33,7 @@ public class Menu
 		int [] mod = new int[] {1, 0};
 		if (this.checkDeplaceEST())
 		{
-			m.deplace(p.coords, mod);
+			m.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -44,7 +44,7 @@ public class Menu
 		int [] mod = new int[] {0, 1};
 		if (this.checkDeplaceSUD())
 		{
-			m.deplace(p.coords, mod);
+			m.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -55,7 +55,7 @@ public class Menu
 		int [] mod = new int[] {-1, 0};
 		if (this.checkDeplaceOUEST())
 		{
-			m.deplace(p.coords, mod);
+			m.deplace(p.getCoords(), mod);
 			p.setCoords(mod);
 		}
 		
@@ -125,7 +125,7 @@ public class Menu
 				System.out.println("5 - poser une bombe    ");
 			System.out.println("/////////");
 			
-			if (p.getAuto())
+			if (p.estBotAuto())
 				t = this.motusAuto(tab);
 			else
 				t = scan.nextInt();

@@ -8,18 +8,46 @@ public class Plateau {
 	private int haut;
 	private char[][] map;
 	private Case vide;
+	private Case murD;
+	private Case murI;
 	
 	public Plateau (int longueur, int largeur){
 		this.theMap = new Case [longueur][largeur];
 		this.longueur = longueur;
 		this.largeur = largeur;
-		
+
 		vide = new Case(null, null, 'V', null);
+		murD = new Case(null, null, 'D', null);
+		murI = new Case(null, null, 'I', null);
 		//this.theMap
 		this.map = new char[][]{{' ',' ','M',' ','P'},
 									{' ','D','M','D',' '},
-									{'D','M','D','D','M'}};
+									{'D','M','D','D','M'}};							
 		
+	}
+	
+	public Plateau(Personnage one, Personnage two)
+	{
+		this.theMap = new Case [10][10];
+		this.longueur = 10;
+		this.largeur = 10;
+
+		vide = new Case(null, null, 'V', null);
+		murD = new Case(null, null, 'D', null);
+		murI = new Case(null, null, 'I', null);
+		Case o = new Case(one, null, '1', null);
+		Case t = new Case(two, null, '2', null);
+		
+		this.theMap = new Case[][]{{murI,murI,murI,murI,murI,murI,murI,murI,murI,murI}, 
+									{murI,o,vide,murD,murD,murD,murD,murD,vide, murI},
+									{murI,vide,murI,vide,murD,murD,murD,murD,murD, murI},
+									{murI,vide,vide,murI,vide,murI,murI,vide,vide, murI},
+									{murI,murD,murD,murD,murD,murI,murD,murD,murD, murI},
+									{murI,murD,murD,murD,murI,murD,murD,murD,murD, murI},
+									{murI,vide,vide,murI,murI,vide,murI,vide,vide, murI},
+									{murI,murD,murD,murD,murD,murD,vide,murI,vide, murI},
+									{murI,vide,murD,murD,murD,murD,murD,vide,t,murI},
+									{murI,murI,murI,murI,murI,murI,murI,murI,murI,murI}};
 	}
 	
 	public void deplace(int[] coords, int[] mod)
