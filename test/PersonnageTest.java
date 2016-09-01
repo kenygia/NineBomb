@@ -4,7 +4,8 @@ import org.junit.Test;
 
 public class PersonnageTest {
 	
-	Personnage perso;
+	Personnage perso= new Personnage();
+	int[] coo = new int[]{1,2};
 	
 	
 	@Test
@@ -14,8 +15,8 @@ public class PersonnageTest {
 	
 	@Test
 	public void testSetCoords(){
-		perso.setCoords(new int[]{1,2});
-		assertEquals(perso.coords, new int[]{1,2});
+		perso.setCoords(coo);
+		assertEquals(perso.coords, coo);
 	}
 	
 	@Test
