@@ -1,11 +1,11 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
-import sort.Item;
+import sort.*;
 
 public class CaseTest {
 	
 	Personnage perso = new Personnage();
-	int[] tab = new int[]{};
+	int[] tab = new int[]{1,2,3};
 	Bombe bombe = new Bombe(tab);
 	Item item;
 	char laCase = 'V';
@@ -71,17 +71,57 @@ public class CaseTest {
 	
 	@Test
 	public void testPrioriteB(){
-		Personnage perso3 = new Personnage("P");
-		Case c3= new Case(perso3,bombe,laCase,null);
+		Personnage perso3 = null;
+		Case c3= new Case(perso3,bombe,laCase,item);
 		assertEquals('B',c3.Priorite());
 	}
 	
 	@Test
 	public void testPrioriteBombDown(){
-		Personnage perso4 = new Personnage("P");
-		Case c4 = new Case(perso4,null,laCase,null);
+		Item i4 = new BombDown();
+		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('e',c4.Priorite());
 	}
 	
-	//Tests bonus et malus a faire
+	@Test
+	public void testPrioriteBombUp(){
+		Item i4 = new BombUp();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('E',c4.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteFireDown(){
+		Item i4 = new FireDown();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('f',c4.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteFireUp(){
+		Item i4 = new FireUp();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('F',c4.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteSkull(){
+		Item i4 = new Skull();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('D',c4.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteSpeedDown(){
+		Item i4 = new SpeedDown();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('s',c4.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteVide(){
+		Item i4 = new SpeedUp();
+		Case c4 = new Case(null,null,laCase,i4);
+		assertEquals('S',c4.Priorite());
+	}
 }
