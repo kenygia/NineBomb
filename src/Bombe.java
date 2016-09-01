@@ -12,7 +12,7 @@ public class Bombe extends Item{
 		return this.coords;
 	}
 
-	String Action() {
-		
+	public String Action() {
+		return null;
 	}
 }

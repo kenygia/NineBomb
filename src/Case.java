@@ -1,4 +1,4 @@
-import sort.Item;
+import sort.*;
 
 public class Case {
 
@@ -14,27 +14,38 @@ public class Case {
 			this.laCase = 'I';
 		}else if (typeCase == 'D'){
 			this.laCase = 'D';
-		}else { //V
+		}else { 
 			this.laCase = 'V';
 		}
 		this.setItem(item);
 	}
 	
-	public char Priorite (){
-		for(int i = 0 ; i < 4; i++){
-			if(this.perso.nom.equals("Player 1")){
-				return '1';
-			}else if(this.perso.nom.equals("Player 2")){
-				return '2';
-			}else if(this.bombe.name == 'B'){
-				return 'B';
-			}else if(!(this.item.equals(null))){
-				return 'I';
+	public char Priorite (){ 
+		if(this.perso.nom.equals("Player 1")){ //Attention à null
+			return '1';
+		}else if(this.perso.nom.equals("Player 2")){
+			return '2';
+		}else if(this.bombe.name == 'B'){
+			return 'B';
+		}else if(!(this.item.equals(null))){
+			if (this.item instanceof BombDown){
+				return 'e';
+			}else if(this.item instanceof BombUp){
+				return 'E';
+			}else if(this.item instanceof FireDown){
+				return 'f';
+			}else if(this.item instanceof FireUp){
+				return 'F';
+			}else if(this.item instanceof Skull){
+				return 'D';
+			}else if(this.item instanceof SpeedDown){
+				return 's';
 			}else{
-				return this.getLaCase();
+				return 'S';
 			}
+		}else{
+			return this.getLaCase();
 		}
-		return 'X'; //X = il y a un problème
 	}
 	
 	public boolean Blocage (){
