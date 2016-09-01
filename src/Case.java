@@ -1,9 +1,9 @@
+import sort.Item;
 
 public class Case {
 
 	private Personnage perso;
 	private Bombe bombe;
-	
 	private Item item;
 	private char laCase;
 	
@@ -17,7 +17,6 @@ public class Case {
 		}else { //V
 			this.laCase = 'V';
 		}
-		this.setLaCase(typeCase);
 		this.setItem(item);
 	}
 	
@@ -27,12 +26,22 @@ public class Case {
 				return '1';
 			}else if(this.perso.nom.equals("Player 2")){
 				return '2';
-			}
-			else if(this.bombe){
+			}else if(this.bombe.name == 'B'){
 				return 'B';
-			}else if(this.item){
-				return 
-			}else if()
+			}else if(!(this.item.equals(null))){
+				return 'I';
+			}else{
+				return this.getLaCase();
+			}
+		}
+		return 'X'; //X = il y a un problème
+	}
+	
+	public boolean Blocage (){
+		if(this.laCase == 'D' || this.laCase == 'I'|| !(this.bombe.equals(null))){
+			return true;
+		}else{ //Attention à null
+			return false;
 		}
 	}
 	
