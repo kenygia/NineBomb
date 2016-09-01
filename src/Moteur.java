@@ -34,5 +34,10 @@ public class Moteur {
 		}
 	}
 	
-	
+	public static char[] getTouches(){
+		
+		
+		
+		return null;
+	}
 }
