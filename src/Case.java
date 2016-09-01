@@ -5,7 +5,7 @@ public class Case {
 	private Personnage perso;
 	private Bombe bombe;
 	private Item item;
-	private char laCase;
+	private char laCase = 'V';
 	
 	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
@@ -20,13 +20,17 @@ public class Case {
 		this.setItem(item);
 	}
 	
-	public char Priorite (){ 
-		if(this.perso.nom.equals("Player 1")){ //Attention à null
-			return '1';
-		}else if(this.perso.nom.equals("Player 2")){
-			return '2';
-		}else if(this.bombe.getName() == 'B'){
-			return 'B';
+	public char Priorite(){ 
+		if(!(this.perso.equals(null))){
+			if(this.perso.nom.equals("Player 1")){ 
+				return '1';
+			}else if(this.perso.nom.equals("Player 2")){
+				return '2';
+			}
+		}else if (!(this.bombe.equals(null))){		
+			if(this.bombe.getName() == 'B'){
+				return 'B';
+			}
 		}else if(!(this.item.equals(null))){
 			if (this.item instanceof BombDown){
 				return 'e';
@@ -43,9 +47,8 @@ public class Case {
 			}else{
 				return 'S';
 			}
-		}else{
-			return this.getLaCase();
 		}
+	    return this.getLaCase();
 	}
 	
 	public boolean Blocage (){
