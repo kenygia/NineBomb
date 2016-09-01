@@ -8,7 +8,7 @@ public class CaseTest {
 	int[] tab = new int[]{};
 	Bombe bombe = new Bombe(tab);
 	Item item;
-	char laCase;
+	char laCase = 'V';
 	Case c = new Case(perso,bombe,laCase,item);
 
 	@Test
@@ -54,5 +54,34 @@ public class CaseTest {
 		c.setLaCase(laCase);
 		assertEquals(c.getLaCase(), laCase);
 	}
-
+	
+	@Test
+	public void testPrioritePlayer1(){
+		Personnage perso1 = new Personnage("Player 1");
+		Case c1 = new Case(perso1,bombe,laCase,item);
+		assertEquals('1',c1.Priorite());
+	}
+	
+	@Test
+	public void testPrioritePlayer2(){
+		Personnage perso2 = new Personnage("Player 2");
+		Case c2 = new Case(perso2,bombe,laCase,null);
+		assertEquals('2',c2.Priorite());
+	}
+	
+	@Test
+	public void testPrioriteB(){
+		Personnage perso3 = new Personnage("P");
+		Case c3= new Case(perso3,bombe,laCase,null);
+		assertEquals('B',c3.Priorite());
+	}
+	
+/*	@Test
+	public void testPrioriteBombDown(){
+		Personnage perso4 = new Personnage("P");
+		Case c4 = new Case(perso4,null,laCase,null);
+		assertEquals('e',c4.Priorite());
+	}*/
+	
+	//Tests bonus et malus a faire
 }

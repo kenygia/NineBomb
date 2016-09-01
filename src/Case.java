@@ -5,7 +5,7 @@ public class Case {
 	private Personnage perso;
 	private Bombe bombe;
 	private Item item;
-	private char laCase;
+	private char laCase = 'V';
 	
 	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
@@ -19,7 +19,7 @@ public class Case {
 			return '1';
 		}else if(this.perso.nom.equals("Player 2")){
 			return '2';
-		}else if(this.bombe.name == 'B'){
+		}else if(this.bombe.getName() == 'B'){
 			return 'B';
 		}else if(!(this.item.equals(null))){
 			if (this.item instanceof BombDown){
