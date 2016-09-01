@@ -98,7 +98,7 @@ public class Menu
 	
 	//affich
 	
-	public void Affich() 
+	public void deplaceAffich() 
 	{
 		boolean[] tab = new boolean[9]; 
 
