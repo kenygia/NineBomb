@@ -8,7 +8,7 @@ public class PlateauTest {
 
 	@Test
 	public void testgetChar() {
-		assertEquals(p.getChar(10, 10),'B');
+		
 	}
 
 }
