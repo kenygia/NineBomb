@@ -16,9 +16,9 @@ public class Moteur {
 		this.plateau = new Plateau(5, 5);
 	}
 	
-	public Moteur(Plateau map){
-		this.liste.add(new Personnage("Player 1"));
-		this.liste.add(new Personnage("Player 1"));
+	public Moteur(Plateau map, Personnage p1, Personnage p2){
+		this.liste.add(p1);
+		this.liste.add(p2);
 		this.plateau = map;
 		nbMorts=0;
 		//Appel de la fonction de prises de touches
@@ -28,6 +28,7 @@ public class Moteur {
 			//debut du jeu
 			int actions = this.liste.get(cpt).getNbAction();
 			while(actions>0){
+				//tour dun joueur
 				
 			}
 			
@@ -40,6 +41,7 @@ public class Moteur {
 			}
 			if(cpt==this.liste.size()){
 				cpt=0;
+				//Explosions des bombes
 			}
 		}
 	}

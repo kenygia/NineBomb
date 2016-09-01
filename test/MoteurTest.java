@@ -12,6 +12,10 @@ public class MoteurTest {
 		assertTrue(moteur.finDePartie());
 	}
 	
-	
+	@Test
+	public void testFinDePartieFaux(){
+		moteur.nbMorts=1;
+		assertTrue(moteur.finDePartie());
+	}
 
 }
