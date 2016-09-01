@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+/**
+ * 
+ * @author REMIR Keenen <kenydbzgt@gmail.com
+ *
+ */
+
 
 public class Menu
 {
