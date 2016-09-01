@@ -124,4 +124,18 @@ public class CaseTest {
 		Case c4 = new Case(null,null,laCase,i4);
 		assertEquals('S',c4.Priorite());
 	}
+	
+	@Test
+	public void testPriorite1(){
+		char laCase2 = 'I';
+		Case c2 = new Case(perso,bombe,laCase2,item);
+		assertEquals('I', c2.Priorite());
+	}
+	
+	@Test
+	public void testPriorite2(){
+		char laCase2 = 'D';
+		Case c2 = new Case(perso,bombe,laCase2,item);
+		assertEquals('D', c2.Priorite());
+	}
 }
