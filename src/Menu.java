@@ -25,19 +25,34 @@ public class Menu
 	
 	public void deplaceEST()
 	{
-		int [] coords = new int[] {1, 0};
+		int [] mod = new int[] {1, 0};
+		if (this.m.checkPerso(this.p, mod))
+		{
+			m.deplace(p.coords, mod);
+			p.setCoords(mod);
+		}
 		
 	}
 	
 	public void deplaceSUD()
 	{
-		int [] coords = new int[] {0, 1};
+		int [] mod = new int[] {0, 1};
+		if (this.m.checkPerso(this.p, mod))
+		{
+			m.deplace(p.coords, mod);
+			p.setCoords(mod);
+		}
 		
 	}
 	
 	public void deplaceOUEST()
 	{
-		int [] coords = new int[] {-1, 0};
+		int [] mod = new int[] {-1, 0};
+		if (this.m.checkPerso(this.p, mod))
+		{
+			m.deplace(p.coords, mod);
+			p.setCoords(mod);
+		}
 		
 	}
 	
