@@ -1,4 +1,10 @@
-import sort.*;
+import sort.BombDown;
+import sort.BombUp;
+import sort.FireDown;
+import sort.FireUp;
+import sort.Item;
+import sort.Skull;
+import sort.SpeedDown;
 
 public class Case {
 
@@ -10,27 +16,22 @@ public class Case {
 	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
 		this.setBombe(bombe);
-		if (typeCase == 'I'){
-			this.laCase = 'I';
-		}else if (typeCase == 'D'){
-			this.laCase = 'D';
-		}else { 
-			this.laCase = 'V';
-		}
+		this.setLaCase(laCase);
 		this.setItem(item);
 	}
 	
 	public char Priorite(){ 
 		if(!(this.perso.equals(null))){
-			if(this.perso.nom.equals("Player 1")){ 
+			if(this.perso.getNom().equals("Player 1")){ 
 				return '1';
-			}else if(this.perso.nom.equals("Player 2")){
+			}else if(this.perso.getNom().equals("Player 2")){
 				return '2';
 			}
 		}else if (!(this.bombe.equals(null))){		
 			if(this.bombe.getName() == 'B'){
 				return 'B';
 			}
+
 		}else if(!(this.item.equals(null))){
 			if (this.item instanceof BombDown){
 				return 'e';

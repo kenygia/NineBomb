@@ -8,13 +8,45 @@ public class PersonnageTest {
 	int[] coo = new int[]{1,2};
 	
 	@Test
-	public void testSetCoords(){
+	public void testSetGetCoords(){
 		perso.setCoords(coo);
-		assertEquals(perso.coords, coo);
+		assertEquals(perso.getCoords(), coo);
 	}
 	
 	@Test
-	public void testGetCoords(){
-		assertEquals(perso.coords, perso.getCoords());
+	public void testEstMort(){
+		assertFalse(perso.estMort());
 	}
+	
+	@Test
+	public void testFaireMourir(){
+		perso.faireMourir();
+		assertTrue(perso.estMort());
+	}
+	
+	@Test
+	public void testSetGetNom(){
+		perso.setNom("nom");
+		assertEquals(perso.getNom(), "nom");
+	}
+	
+	@Test
+	public void testSetGetNbAction(){
+		perso.setNbAction(0);
+		assertEquals(perso.getNbAction(), 0);
+	}
+	
+	@Test
+	public void testEstSetBotAutoTRUE(){
+		perso.setBotAuto(true);
+		assertTrue(perso.estBotAuto());
+	}
+	
+	@Test
+	public void testEstSetBotAutoFALSE(){
+		perso.setBotAuto(false);
+		assertFalse(perso.estBotAuto());
+	}
+	
+	 
 }

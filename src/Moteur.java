@@ -7,28 +7,34 @@ import java.util.ArrayList;
 public class Moteur {
 
 	ArrayList<Personnage> liste;
-	static Plateau map;
+	static Plateau plateau;
 	int nbMorts;
+	
+	public Moteur(){
+		this.liste.add(new Personnage("Player 1"));
+		this.liste.add(new Personnage("Player 1"));
+		this.plateau = new Plateau(5, 5);
+	}
 	
 	public Moteur(Plateau map){
 		this.liste.add(new Personnage("Player 1"));
 		this.liste.add(new Personnage("Player 1"));
-		this.map = map;
+		this.plateau = map;
 		nbMorts=0;
 		//Appel de la fonction de prises de touches
 		
 		int cpt=0;
-		while(nbMorts<this.liste.size()-1){
+		while(!finDePartie()){
 			//debut du jeu
-			int actions = this.liste.get(cpt).nbAction;
+			int actions = this.liste.get(cpt).getNbAction();
 			while(actions>0){
 				
 			}
 			
 			//fin de la boucle
-			nbMorts=0;
+			this.nbMorts=0;
 			cpt++;
-			while(cpt<this.liste.size() && this.liste.get(cpt).mort==true){
+			while(cpt<this.liste.size() && this.liste.get(cpt).estMort()==true){
 				cpt++;
 				nbMorts++;
 			}
@@ -36,6 +42,10 @@ public class Moteur {
 				cpt=0;
 			}
 		}
+	}
+	
+	public boolean finDePartie(){
+		return this.nbMorts<this.liste.size()-1;
 	}
 	
 	public static char[] getTouches(){
