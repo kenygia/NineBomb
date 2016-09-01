@@ -27,7 +27,7 @@ public class Moteur {
 		//Appel de la fonction de prises de touches
 		
 		Plateau plateau = new Plateau(p1, p2);
-		System.out.println(plateau.toString());
+		
 		
 		int cpt=0;
 		while(!finDePartie()){
@@ -36,6 +36,7 @@ public class Moteur {
 			while(actions>0){
 				//tour dun joueur
 				//this.priseDeTouches();
+				System.out.println(plateau.toString());
 				Menu menu = new Menu(this.liste.get(cpt),this.plateau);
 				menu.deplaceAffich();
 				actions--;
