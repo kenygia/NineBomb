@@ -33,7 +33,7 @@ public class Personnage {
 	}
 	
 	public int[] getDeplacement(char c){
-		for(int i=0;i<this.touche.length-2;i++){
+		for(int i=0;i<this.touche.length-1;i++){
 			if(this.touche[i]==c){
 				return this.deplacement[i];
 			}
