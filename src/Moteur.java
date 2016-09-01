@@ -11,7 +11,13 @@ public class Moteur {
 		//Appel de la fonction de prises de touches
 	}
 	
-	public static void action(char c){
-		
+	public void action(char c){
+		if(c==this.perso.getToucheBombe()){
+			
+		}else{
+			int[]pos = perso.getCoords();
+			map[pos[0]][pos[1]] = '.'; //Espace vide
+			
+		}
 	}
 }
