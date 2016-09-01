@@ -86,9 +86,9 @@ public class Plateau {
 	
 	public String toString(){
 		String chaine = "";
-		for(int i=0;i<this.map.length;i++){
-			for(int j=0;j<this.map[0].length;j++){
-				chaine += this.map[i][j]/*.Priorite()*/;
+		for(int i=0;i<this.theMap.length;i++){
+			for(int j=0;j<this.theMap[0].length;j++){
+				chaine += this.theMap[i][j].Priorite();
 			}
 			chaine += "\n";
 		}
