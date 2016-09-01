@@ -16,10 +16,10 @@ public class Moteur {
 		this.plateau = new Plateau(5, 5);
 	}
 	
-	public Moteur(Plateau map, Personnage p1, Personnage p2){
+	public Moteur(Personnage p1, Personnage p2){
 		this.liste.add(p1);
 		this.liste.add(p2);
-		this.plateau = map;
+		this.plateau = new Plateau(p1, p2);
 		nbMorts=0;
 		//Appel de la fonction de prises de touches
 		
@@ -67,5 +67,9 @@ public class Moteur {
 			
 		}
 		return touches;
+	}
+	
+	public static void main(String[]args){
+		
 	}
 }
