@@ -1,11 +1,11 @@
 
-public class Map {
+public class Plateau {
 
 	private char [][] theMap;
 	private int longueur;
 	private int largeur;
 	
-	public Map (int longueur, int largeur){
+	public Plateau (int longueur, int largeur){
 		this.theMap = new char [longueur][largeur];
 		this.longueur = longueur;
 		this.largeur = largeur;
