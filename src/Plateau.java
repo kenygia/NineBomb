@@ -48,6 +48,12 @@ public class Plateau {
 
 		this.theMap[nx][ny].setPerso(this.theMap[x][y].getPerso());
 		this.theMap[x][y].setPerso(null);
+		if(this.theMap[x][y].getBombe()!=null){
+			this.theMap[x][y].setLaCase('B');
+		}else{
+			this.theMap[x][y].setLaCase('V');
+		}
+		this.theMap[nx][ny].setLaCase('1');
 
 		return new int[] { nx, ny };
 	}
