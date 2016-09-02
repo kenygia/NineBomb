@@ -4,7 +4,7 @@ public class Bombe
 	private int[] coords;
 	private int portee=1;
 	private char name='B';
-	private int counter = 3;
+	private int counter = 2;
 
 	public Bombe(int[]c)
 	{

@@ -58,7 +58,11 @@ public class Moteur {
 				//Explosions des bombes
 			}
 		}
-		System.out.println("Un des joueurs a gagne!");
+		for(int i=0;i<60;i++){
+			System.out.println("");
+		}
+		plateau.affichage();
+		System.out.println("Le joueur "+(cpt+1)+" a gagne!");
 	}
 	
 	public boolean finDePartie(){
