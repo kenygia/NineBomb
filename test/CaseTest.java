@@ -10,43 +10,28 @@ public class CaseTest {
 	Item item;
 	char laCase = 'V';
 	Case c = new Case(perso,bombe,laCase,item);
-
-	@Test
-	public void testGetPerso() {
-		assertEquals(c.getPerso(), perso);
-	}
 	
 	@Test
-	public void testSetPerso() {
+	public void testGetSetPerso() {
 		c.setPerso(perso);
 		assertEquals(c.getPerso(), perso);
 	}
 	
 	@Test
-	public void testGetBombe() {
-		assertEquals(c.getBombe(), bombe);
-	}
-	
-	@Test
-	public void testSetBombe() {
+	public void testGetSetBombe() {
 		c.setBombe(bombe);
 		assertEquals(c.getBombe(), bombe);
 	}
 	
 	@Test
-	public void testGetItem(){
-		assertEquals(c.getItem(), item);
-	}
-	
-	@Test
-	public void testSetItem(){
+	public void testGetSetItem(){
 		c.setItem(item);
 		assertEquals(c.getItem(), item);
 	}
 	
 	@Test
 	public void testGetLaCase(){
-		assertEquals(c.getLaCase(), laCase);
+		assertEquals(c.getLaCase(), 'V');
 	}
 	
 	@Test
