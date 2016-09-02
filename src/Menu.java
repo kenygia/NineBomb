@@ -99,7 +99,7 @@ public class Menu
 		int t = 0;
 		while (this.checkLoop(tab, t)) {
 			System.out.println("/////////");
-			System.out.println("Selecttionner l'action :");
+			System.out.println("Selectionner l'action :");
 			if (tab[1])
 				System.out.println("1 - deplacement au NORD    ");
 			if (tab[2])

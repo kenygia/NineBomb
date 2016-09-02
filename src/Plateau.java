@@ -28,7 +28,8 @@ public class Plateau {
 		this.theMap = new Case[10][10];
 		this.longueur = 10;
 		this.largeur = 10;
-
+		this.bombes = new ArrayList<>();
+		
 		vide = new Case(null, null, 'V', null);
 		murD = new Case(null, null, 'D', null);
 		murI = new Case(null, null, 'I', null);
