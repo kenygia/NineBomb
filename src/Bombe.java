@@ -50,25 +50,31 @@ public class Bombe
 
 	}
 
-	public void exploser(Case[][] tab){
+	public static void exploser(Case[][] tab){
 		for(int i=0; i<tab.length; i++){
 			for(int j=0; j<tab.length; j++){
-				if(tab[i][j].getBombe().counter==0){
-					if(i!=0 || i!=tab.length || j!=0 || j!=tab.length){
-						if(tab[i+1][j].getLaCase()=='D'){
-							tab[i+1][j].setLaCase('V');
-						}
-						if(tab[i-1][j].getLaCase()=='D'){
-							tab[i-1][j].setLaCase('V');
-						}
-						if(tab[i][j-1].getLaCase()=='D'){
-							tab[i][j-1].setLaCase('V');
-						}
-						if(tab[i][j+1].getLaCase()=='D'){
-							tab[i][j+1].setLaCase('V');
-						}
-						if(tab[i][j].getLaCase()=='B'){
-							tab[i][j].setLaCase('V');
+				if(tab[i][j].getBombe() != null) {
+					Bombe bombe = tab[i][j].getBombe();
+					bombe.decounter();
+					int coord0 = bombe.getCoords()[0];
+					int coord1 = bombe.getCoords()[1];
+					if(bombe.counter==0){
+						if(i!=0 || i!=tab.length || j!=0 || j!=tab.length){
+							if(tab[coord0+1][coord1].getLaCase()=='D'){
+								tab[coord0+1][coord1].setLaCase('V');
+							}
+							if(tab[coord0-1][coord1].getLaCase()=='D'){
+								tab[coord0-1][coord1].setLaCase('V');
+							}
+							if(tab[coord0][coord1-1].getLaCase()=='D'){
+								tab[coord0][coord1-1].setLaCase('V');
+							}
+							if(tab[coord0][coord1+1].getLaCase()=='D'){
+								tab[coord0][coord1+1].setLaCase('V');
+							}
+							if(tab[coord0][coord1].getLaCase()=='B'){
+								tab[coord0][coord1].setLaCase('V');
+							}
 						}
 					}
 				}
