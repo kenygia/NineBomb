@@ -31,9 +31,19 @@ public class PersonnageTest {
 	}
 	
 	@Test
-	public void testSetGetNbAction(){
+	public void testSetNbAction(){
 		perso.setNbAction(0);
 		assertEquals(perso.getNbAction(), 0);
+	}
+	
+	@Test
+	public void testGetNbActions(){
+		assertEquals(perso.getNbAction(), 2);
+	}
+	
+	@Test
+	public void testEstBotAutoBase(){
+		assertFalse(perso.estBotAuto());
 	}
 	
 	@Test

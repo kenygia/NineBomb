@@ -36,7 +36,7 @@ public class Moteur {
 			while(actions>0){
 				//tour dun joueur
 				//this.priseDeTouches();
-				System.out.println(plateau.toString());
+				plateau.affichage();
 				Menu menu = new Menu(this.liste.get(cpt),this.plateau);
 				menu.deplaceAffich();
 				actions--;
@@ -51,6 +51,7 @@ public class Moteur {
 			}
 			if(cpt==this.liste.size()){
 				cpt=0;
+				plateau.incremente();
 				//Explosions des bombes
 			}
 		}
@@ -94,7 +95,7 @@ public class Moteur {
 	
 	public static void main(String[]args){
 		Personnage p1 = new Personnage("Player1",new int[]{1,1});
-		Personnage p2 = new Personnage("Player2",new int[]{9,9});
+		Personnage p2 = new Personnage("Player2",new int[]{8,8});
 		new Moteur(p1,p2);
 	}
 }
