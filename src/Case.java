@@ -38,7 +38,7 @@ public class Case {
 			}
 		}else if (!(this.bombe == null)){		
 			if(this.bombe.getName() == 'B'){
-				return 'B';
+				return '\u03CC';
 			}
 		}else if(!(this.item == null)){
 			if (this.item instanceof BombDown){

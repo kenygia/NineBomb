@@ -58,7 +58,7 @@ public class CaseTest {
 	public void testPrioriteB(){
 		Personnage perso3 = null;
 		Case c3= new Case(perso3,bombe,laCase,item);
-		assertEquals('B',c3.Priorite());
+		assertEquals('\u03CC',c3.Priorite());
 	}
 	
 	@Test
