@@ -51,6 +51,7 @@ public class Moteur {
 			}
 			if(cpt==this.liste.size()){
 				cpt=0;
+				plateau.incremente();
 				//Explosions des bombes
 			}
 		}
