@@ -5,8 +5,7 @@ public class Plateau {
 	private Case[][] theMap;
 	private int longueur;
 	private int largeur;
-	private int haut;
-	private char[][] map;
+	private String map;
 	private Case vide;
 	private Case murD;
 	private Case murI;
@@ -21,9 +20,7 @@ public class Plateau {
 		vide = new Case(null, null, 'V', null);
 		murD = new Case(null, null, 'D', null);
 		murI = new Case(null, null, 'I', null);
-		// this.theMap
-		this.map = new char[][] { { ' ', ' ', 'M', ' ', 'P' }, { ' ', 'D', 'M', 'D', ' ' },
-				{ 'D', 'M', 'D', 'D', 'M' } };
+		
 
 	}
 
@@ -81,15 +78,15 @@ public class Plateau {
 		return new int[this.longueur][this.largeur];
 	}
 
-	public String toString() {
-		String chaine = "";
+	public void affichage() {
+		this.map = "";
 		for (int i = 0; i < this.theMap.length; i++) {
 			for (int j = 0; j < this.theMap[0].length; j++) {
-				chaine += this.theMap[i][j].Priorite();
+				map += this.theMap[i][j].Priorite();
 			}
-			chaine += "\n";
+			map += "\n";
 		}
-		return chaine;
+		System.out.print(map);
 	}
 	
 	public void ajouteBombe(int[] c){
@@ -106,7 +103,7 @@ public class Plateau {
 	public void explose(){
 		for(int i=0;i<this.bombes.size();i++){
 			//A corriger
-			this.bombes.get(i).explosion;
+			//this.bombes.get(i).explosion;
 		}
 	}
 }
