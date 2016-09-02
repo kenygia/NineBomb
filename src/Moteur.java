@@ -36,7 +36,7 @@ public class Moteur {
 			while(actions>0){
 				//tour dun joueur
 				//this.priseDeTouches();
-				System.out.println(plateau.toString());
+				plateau.affichage();
 				Menu menu = new Menu(this.liste.get(cpt),this.plateau);
 				menu.deplaceAffich();
 				actions--;
