@@ -63,7 +63,7 @@ public class Moteur {
 	public char[] getTouches(){
 		BufferedReader text;
 		try {
-			text = new BufferedReader(new FileReader("./ressources/touches"));
+			text = new BufferedReader(new FileReader("./touches"));
 		} catch (FileNotFoundException e) {
 			text = null;
 		}
