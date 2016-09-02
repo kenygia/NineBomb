@@ -6,16 +6,14 @@ public class Plateau {
 	private int longueur;
 	private int largeur;
 	private String map;
-	private Case vide;
+	public Case vide;
 	private Case murD;
 	private Case murI;
-	private ArrayList<Bombe> bombes;
 
 	public Plateau(int longueur, int largeur) {
 		this.theMap = new Case[longueur][largeur];
 		this.longueur = longueur;
 		this.largeur = largeur;
-		this.bombes = new ArrayList<>();
 		
 		vide = new Case(null, null, 'V', null);
 		murD = new Case(null, null, 'D', null);
@@ -28,7 +26,6 @@ public class Plateau {
 		this.theMap = new Case[10][10];
 		this.longueur = 10;
 		this.largeur = 10;
-		this.bombes = new ArrayList<>();
 		
 		vide = new Case(null, null, 'V', null);
 		murD = new Case(null, null, 'D', null);
@@ -55,8 +52,8 @@ public class Plateau {
 		int nx = coords[0] + mod[0];
 		int ny = coords[1] + mod[1];
 
-		this.theMap[nx][ny] = this.theMap[x][y];
-		this.theMap[x][y] = this.vide;
+		this.theMap[nx][ny].setPerso(this.theMap[x][y].getPerso());
+		this.theMap[x][y].setPerso(null);
 
 		return new int[] { nx, ny };
 	}
@@ -88,24 +85,6 @@ public class Plateau {
 			map += "\n";
 		}
 		System.out.print(map);
-	}
-	
-	public void ajouteBombe(int[] c){
-		this.bombes.add(new Bombe(c));
-	}
-	
-	public void incremente(){
-		for(int i=0;i<this.bombes.size();i++){
-			this.bombes.get(i).decounter();
-		}
-		this.explose();
-	}
-	
-	public void explose(){
-		for(int i=0;i<this.bombes.size();i++){
-			//A corriger
-			//this.bombes.get(i).explosion;
-		}
 	}
 	
 	public Case[][] getMap(){
