@@ -20,16 +20,16 @@ public class PlateauTest {
 	
 	@Test
 	public void testgetCharMurIndestructible() {
-		assertEquals(p.getChar(0,0), 'I');
+		assertEquals(p.getChar(0,0), '\u25A0');
 	}
 	
 	@Test
 	public void testgetCharMurDestructible() {
-		assertEquals(p.getChar(1,4), 'D');
+		assertEquals(p.getChar(1,4), '\u25A1');
 	}
 	
 	@Test
 	public void testgetCharCaseVide() {
-		assertEquals(p.getChar(1,2), 'V');
+		assertEquals(p.getChar(1,2), ' ');
 	}
 }
