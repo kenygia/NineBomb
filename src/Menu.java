@@ -53,25 +53,25 @@ public class Menu
 	
 	public boolean checkDeplaceNORD()
 	{
-		int [] mod = new int[] {0, -1};
+		int [] mod = new int[] {-1, 0};
 		return this.m.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceEST()
 	{
-		int [] mod = new int[] {1, 0};
+		int [] mod = new int[] {0, 1};
 		return this.m.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceSUD()
 	{
-		int [] mod = new int[] {0, 1};
+		int [] mod = new int[] {1, 0};
 		return this.m.checkPerso(this.p, mod);
 	}
 	
 	public boolean checkDeplaceOUEST()
 	{
-		int [] mod = new int[] {-1, 0};
+		int [] mod = new int[] {0, -1};
 		return this.m.checkPerso(this.p, mod);
 	}
 	
