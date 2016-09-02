@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Moteur {
 
 	ArrayList<Personnage> liste = new ArrayList<>();
-	//static Plateau plateau;
 	static char[]touches;
 	int nbMorts;
 	
@@ -51,7 +50,7 @@ public class Moteur {
 			}
 			if(cpt==this.liste.size()){
 				cpt=0;
-				plateau.incremente();
+				Bombe.exploser(plateau.getMap());
 				//Explosions des bombes
 			}
 		}
