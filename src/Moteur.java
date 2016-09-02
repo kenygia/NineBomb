@@ -26,13 +26,19 @@ public class Moteur {
 		nbMorts=0;
 		//Appel de la fonction de prises de touches
 		
+		Plateau plateau = new Plateau(p1, p2);
+		
+		
 		int cpt=0;
 		while(!finDePartie()){
 			//debut du jeu
 			int actions = this.liste.get(cpt).getNbAction();
 			while(actions>0){
 				//tour dun joueur
-				this.priseDeTouches();
+				//this.priseDeTouches();
+				System.out.println(plateau.toString());
+				Menu menu = new Menu(this.liste.get(cpt),this.plateau);
+				menu.deplaceAffich();
 				actions--;
 			}
 			
@@ -87,8 +93,8 @@ public class Moteur {
 	}
 	
 	public static void main(String[]args){
-		Personnage p1 = new Personnage("Player1");
-		Personnage p2 = new Personnage("Player2");
+		Personnage p1 = new Personnage("Player1",new int[]{1,1});
+		Personnage p2 = new Personnage("Player2",new int[]{9,9});
 		new Moteur(p1,p2);
 	}
 }

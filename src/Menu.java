@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+/**
+ * 
+ * @author REMIR Keenen <kenydbzgt@gmail.com
+ *
+ */
+
 
 public class Menu
 {
@@ -21,44 +27,25 @@ public class Menu
 	public void deplaceNORD()
 	{
 		int [] mod = new int[] {0, -1};
-		if (this.checkDeplaceNORD())
-		{
-			m.deplace(p.getCoords(), mod);
-			p.setCoords(mod);
-		}
+		p.setCoords(m.deplace(p.getCoords(), mod));
 	}
 	
 	public void deplaceEST()
 	{
 		int [] mod = new int[] {1, 0};
-		if (this.checkDeplaceEST())
-		{
-			m.deplace(p.getCoords(), mod);
-			p.setCoords(mod);
-		}
-		
+		p.setCoords(m.deplace(p.getCoords(), mod));
 	}
 	
 	public void deplaceSUD()
 	{
 		int [] mod = new int[] {0, 1};
-		if (this.checkDeplaceSUD())
-		{
-			m.deplace(p.getCoords(), mod);
-			p.setCoords(mod);
-		}
-		
+		p.setCoords(m.deplace(p.getCoords(), mod));
 	}
 	
 	public void deplaceOUEST()
 	{
 		int [] mod = new int[] {-1, 0};
-		if (this.checkDeplaceOUEST())
-		{
-			m.deplace(p.getCoords(), mod);
-			p.setCoords(mod);
-		}
-		
+		p.setCoords(m.deplace(p.getCoords(), mod));	
 	}
 	
 	// checkdeplace
@@ -104,9 +91,9 @@ public class Menu
 
 		tab[0] = false;
 		tab[1] = this.checkDeplaceNORD();
-		tab[2] = this.checkDeplaceNORD();
-		tab[3] = this.checkDeplaceNORD();
-		tab[4] = this.checkDeplaceNORD();
+		tab[2] = this.checkDeplaceEST();
+		tab[3] = this.checkDeplaceSUD();
+		tab[4] = this.checkDeplaceOUEST();
 		tab[5] = true;
 		
 		int t = 0;

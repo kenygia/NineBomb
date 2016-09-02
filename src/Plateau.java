@@ -50,7 +50,7 @@ public class Plateau {
 									{murI,murI,murI,murI,murI,murI,murI,murI,murI,murI}};
 	}
 	
-	public void deplace(int[] coords, int[] mod)
+	public int[] deplace(int[] coords, int[] mod)
 	{
 
 		int x = coords[0];
@@ -60,15 +60,15 @@ public class Plateau {
 		
 		this.theMap[nx][ny] = this.theMap[x][y];
 		this.theMap[x][y] = this.vide;
+		
+		return new int[] {nx,ny};
 	}
 	
 	public boolean checkPerso(Personnage p, int[] mod)
 	{
 		int x = p.getCoords()[0]+mod[0];
 		int y = p.getCoords()[1]+mod[1];
-		if ((largeur > y) && (longueur > x) && (x >= 0) && (y >= 0))
-			return !(this.theMap[x][y].Blocage());
-		return false;
+		return !(this.theMap[x][y].Blocage());
 	}
 	
 	public char getChar(int x, int y){

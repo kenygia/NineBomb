@@ -60,7 +60,7 @@ public class Case {
 	}
 	
 	public boolean Blocage (){
-		if(this.laCase == 'D' || this.laCase == 'I'|| !(this.bombe.equals(null))){
+		if(this.laCase == 'D' || this.laCase == 'I'|| !(this.bombe==null)){
 			return true;
 		}else{ 
 			return false;

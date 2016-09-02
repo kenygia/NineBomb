@@ -10,13 +10,13 @@ public class Personnage {
 	public Personnage(){
 		this.setMort(false);
 		setNom("Player 1");
-		this.coords = new int[]{0,0};
+		this.coords = new int[]{1,1};
 	}
 	
 	public Personnage(String chaine){
 		this.setMort(false);
 		setNom(chaine);
-		this.coords = new int[]{0,0};
+		this.coords = new int[]{1,1};
 	}
 	
 	public Personnage(String chaine, int[]coords){
