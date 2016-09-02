@@ -7,6 +7,7 @@ public class Plateau {
 	private int largeur;
 	private String map;
 	private Case murI;
+	private Personnage one ;
 
 	public Plateau(int longueur, int largeur) {
 		this.theMap = new Case[longueur][largeur];
@@ -22,6 +23,7 @@ public class Plateau {
 		this.theMap = new Case[10][10];
 		this.longueur = 10;
 		this.largeur = 10;
+		this.one = one;
 		
 		murI = new Case(null, null, 'I', null);
 		Case o = new Case(one, null, '1', null);
@@ -47,13 +49,17 @@ public class Plateau {
 		int ny = coords[1] + mod[1];
 
 		this.theMap[nx][ny].setPerso(this.theMap[x][y].getPerso());
+		if(this.theMap[x][y].getPerso().getNom()==this.one.getNom()){
+			this.theMap[nx][ny].setLaCase('1');
+		}else{
+			this.theMap[nx][ny].setLaCase('2');
+		}
 		this.theMap[x][y].setPerso(null);
 		if(this.theMap[x][y].getBombe()!=null){
 			this.theMap[x][y].setLaCase('B');
 		}else{
 			this.theMap[x][y].setLaCase('V');
 		}
-		this.theMap[nx][ny].setLaCase('1');
 
 		return new int[] { nx, ny };
 	}
@@ -77,6 +83,9 @@ public class Plateau {
 	}
 
 	public void affichage() {
+		for(int i=0;i<60;i++){
+			System.out.println("");
+		}
 		this.map = "";
 		for (int i = 0; i < this.theMap.length; i++) {
 			for (int j = 0; j < this.theMap[0].length; j++) {

@@ -52,7 +52,7 @@ public class Bombe
 
 	public static void exploser(Case[][] tab){
 		for(int i=0; i<tab.length; i++){
-			for(int j=0; j<tab.length; j++){
+			for(int j=0; j<tab.length; j++){			
 				if(tab[i][j].getBombe() != null) {
 					Bombe bombe = tab[i][j].getBombe();
 					bombe.decounter();
@@ -62,22 +62,37 @@ public class Bombe
 						if(i!=0 || i!=tab.length || j!=0 || j!=tab.length){
 							if(tab[coord0+1][coord1].getLaCase()=='D'){
 								tab[coord0+1][coord1].setLaCase('V');
+								persoExplode(coord0+1, coord1, tab);
 							}
 							if(tab[coord0-1][coord1].getLaCase()=='D'){
 								tab[coord0-1][coord1].setLaCase('V');
+								persoExplode(coord0-1, coord1, tab);
 							}
 							if(tab[coord0][coord1-1].getLaCase()=='D'){
 								tab[coord0][coord1-1].setLaCase('V');
+								persoExplode(coord0, coord1-1, tab);
 							}
 							if(tab[coord0][coord1+1].getLaCase()=='D'){
 								tab[coord0][coord1+1].setLaCase('V');
+								persoExplode(coord0, coord1+1, tab);
 							}
 							tab[coord0][coord1].setLaCase('V');
+							persoExplode(coord0, coord1, tab);
 							tab[i][j].setBombe(null);
 						}
 					}
 				}
 			}
+		}
+	}
+	
+	private static void persoExplode(int x, int y,Case[][] tab)
+	{
+		if(tab[x][y].getPerso() != null)
+		{
+			Personnage p  = tab[x][y].getPerso();
+			p.faireMourir();
+			tab[x][y].setPerso(null);
 		}
 	}
 

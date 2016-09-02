@@ -101,7 +101,7 @@ public class Menu
 		while (this.checkLoop(tab, t)) {
 			System.out.println("/////////");
 			System.out.println("Joueur: "+this.p.getNom());
-			System.out.println("Nb D'actions restantes: "+this.p.getNbAction());
+		//	System.out.println("Nb D'actions restantes: "+this.p.getNbAction());
 			System.out.println("Selectionner l'action :");
 			if (tab[1])
 				System.out.println("1 - deplacement au NORD    ");
