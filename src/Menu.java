@@ -26,25 +26,26 @@ public class Menu
 	
 	public void deplaceNORD()
 	{
-		int [] mod = new int[] {0, -1};
+		int [] mod = new int[] {-1, 0};
 		p.setCoords(m.deplace(p.getCoords(), mod));
 	}
 	
 	public void deplaceEST()
 	{
-		int [] mod = new int[] {1, 0};
-		p.setCoords(m.deplace(p.getCoords(), mod));
+		int [] mod = new int[] {0, 1};
+		int[] temp = (m.deplace(p.getCoords(), mod));
+		p.setCoords(temp);
 	}
 	
 	public void deplaceSUD()
 	{
-		int [] mod = new int[] {0, 1};
+		int [] mod = new int[] {1, 0};
 		p.setCoords(m.deplace(p.getCoords(), mod));
 	}
 	
 	public void deplaceOUEST()
 	{
-		int [] mod = new int[] {-1, 0};
+		int [] mod = new int[] {0, -1};
 		p.setCoords(m.deplace(p.getCoords(), mod));	
 	}
 	
@@ -99,6 +100,7 @@ public class Menu
 		int t = 0;
 		while (this.checkLoop(tab, t)) {
 			System.out.println("/////////");
+			System.out.println("Joueur: "+this.p.getNom());
 			System.out.println("Selectionner l'action :");
 			if (tab[1])
 				System.out.println("1 - deplacement au NORD    ");

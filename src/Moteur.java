@@ -8,21 +8,21 @@ import java.util.Scanner;
 public class Moteur {
 
 	ArrayList<Personnage> liste = new ArrayList<>();
-	static Plateau plateau;
+	//static Plateau plateau;
 	static char[]touches;
 	int nbMorts;
 	
 	public Moteur(){
 		this.liste.add(new Personnage("Player 1"));
 		this.liste.add(new Personnage("Player 1"));
-		this.plateau = new Plateau(5, 5);
+		//this.plateau = new Plateau(5, 5);
 	}
 	
 	public Moteur(Personnage p1, Personnage p2){
 		touches = this.getTouches();
 		this.liste.add(p1);
 		this.liste.add(p2);
-		this.plateau = new Plateau(p1, p2);
+		//this.plateau = new Plateau(p1, p2);
 		nbMorts=0;
 		//Appel de la fonction de prises de touches
 		
@@ -37,7 +37,7 @@ public class Moteur {
 				//tour dun joueur
 				//this.priseDeTouches();
 				plateau.affichage();
-				Menu menu = new Menu(this.liste.get(cpt),this.plateau);
+				Menu menu = new Menu(this.liste.get(cpt),plateau);
 				menu.deplaceAffich();
 				actions--;
 			}
