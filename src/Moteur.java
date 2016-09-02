@@ -95,7 +95,7 @@ public class Moteur {
 	
 	public static void main(String[]args){
 		Personnage p1 = new Personnage("Player1",new int[]{1,1});
-		Personnage p2 = new Personnage("Player2",new int[]{9,9});
+		Personnage p2 = new Personnage("Player2",new int[]{8,8});
 		new Moteur(p1,p2);
 	}
 }
