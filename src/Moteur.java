@@ -34,18 +34,23 @@ public class Moteur {
 			while(actions>0){
 				//tour dun joueur
 				//this.priseDeTouches();
-				plateau.affichage();
-				Menu menu = new Menu(this.liste.get(cpt),plateau);
-				menu.deplaceAffich();
+				if (!this.liste.get(cpt).estMort())
+				{
+					plateau.affichage();
+					Menu menu = new Menu(this.liste.get(cpt),plateau);
+					menu.deplaceAffich();
+				}
 				actions--;
 			}
 			
 			//fin de la boucle
 			this.nbMorts=0;
-			cpt++;
 			while(cpt<this.liste.size() && this.liste.get(cpt).estMort()==true){
 				cpt++;
 				nbMorts++;
+			}
+			if(nbMorts==0){
+				cpt++;
 			}
 			if(cpt==this.liste.size()){
 				cpt=0;
@@ -53,6 +58,7 @@ public class Moteur {
 				//Explosions des bombes
 			}
 		}
+		System.out.println("Un des joueurs a gagne!");
 	}
 	
 	public boolean finDePartie(){

@@ -62,21 +62,21 @@ public class Bombe
 						if(i!=0 || i!=tab.length || j!=0 || j!=tab.length){
 							if(tab[coord0+1][coord1].getLaCase()=='D'){
 								tab[coord0+1][coord1].setLaCase('V');
-								persoExplode(coord0+1, coord1, tab);
 							}
 							if(tab[coord0-1][coord1].getLaCase()=='D'){
 								tab[coord0-1][coord1].setLaCase('V');
-								persoExplode(coord0-1, coord1, tab);
 							}
 							if(tab[coord0][coord1-1].getLaCase()=='D'){
 								tab[coord0][coord1-1].setLaCase('V');
-								persoExplode(coord0, coord1-1, tab);
 							}
 							if(tab[coord0][coord1+1].getLaCase()=='D'){
 								tab[coord0][coord1+1].setLaCase('V');
-								persoExplode(coord0, coord1+1, tab);
 							}
 							tab[coord0][coord1].setLaCase('V');
+							persoExplode(coord0, coord1-1, tab);
+							persoExplode(coord0, coord1+1, tab);
+							persoExplode(coord0-1, coord1, tab);
+							persoExplode(coord0+1, coord1, tab);
 							persoExplode(coord0, coord1, tab);
 							tab[i][j].setBombe(null);
 						}
@@ -90,8 +90,7 @@ public class Bombe
 	{
 		if(tab[x][y].getPerso() != null)
 		{
-			Personnage p  = tab[x][y].getPerso();
-			p.faireMourir();
+			tab[x][y].getPerso().faireMourir();
 			tab[x][y].setPerso(null);
 		}
 	}
