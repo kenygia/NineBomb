@@ -11,7 +11,7 @@ public class Case {
 	private Personnage perso;
 	private Bombe bombe;
 	private Item item;
-	private char laCase = 'V';
+	private char laCase = ' ';
 	
 	public Case (Personnage perso, Bombe bombe, char typeCase, Item item){
 		this.setPerso(perso);
@@ -26,19 +26,20 @@ public class Case {
 	}
 	
 	public char Priorite(){ 
-		if(this.laCase == 'I' || this.laCase == 'D'){
-			return this.getLaCase();
+		if(this.laCase == 'I'){
+			return '\u25A0';
+		}else if(this.laCase == 'D'){
+			return '\u25A1';
 		}else if(!(this.perso == null)){
 			if(this.perso.getNom().equals("Player 1")){ 
-				return '1';
+				return '\u25B4';
 			}else if(this.perso.getNom().equals("Player 2")){
-				return '2';
+				return '\u25B5';
 			}
 		}else if (!(this.bombe == null)){		
 			if(this.bombe.getName() == 'B'){
 				return 'B';
 			}
-
 		}else if(!(this.item == null)){
 			if (this.item instanceof BombDown){
 				return 'e';
@@ -55,6 +56,8 @@ public class Case {
 			}else{
 				return 'S';
 			}
+		}else if(this.getLaCase() == 'V'){
+			return ' ';
 		}
 	    return this.getLaCase();
 	}
