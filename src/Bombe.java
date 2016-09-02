@@ -72,9 +72,8 @@ public class Bombe
 							if(tab[coord0][coord1+1].getLaCase()=='D'){
 								tab[coord0][coord1+1].setLaCase('V');
 							}
-							if(tab[coord0][coord1].getLaCase()=='B'){
-								tab[coord0][coord1].setLaCase('V');
-							}
+							tab[coord0][coord1].setLaCase('V');
+							tab[i][j].setBombe(null);
 						}
 					}
 				}
