@@ -18,7 +18,6 @@ public class Moteur {
 	}
 	
 	public Moteur(Personnage p1, Personnage p2){
-		touches = this.getTouches();
 		this.liste.add(p1);
 		this.liste.add(p2);
 		//this.plateau = new Plateau(p1, p2);
@@ -60,24 +59,6 @@ public class Moteur {
 		return this.nbMorts>=this.liste.size()-1;
 	}
 	
-	public char[] getTouches(){
-		BufferedReader text;
-		try {
-			text = new BufferedReader(new FileReader("./touches"));
-		} catch (FileNotFoundException e) {
-			text = null;
-		}
-		char[] touches = new char[5];
-		for(int i=0;i<touches.length;i++){
-			try {
-				touches[i] = text.readLine().charAt(0);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-		}
-		return touches;
-	}
 	
 	public void priseDeTouches(){
 		Scanner sc = new Scanner(System.in);
