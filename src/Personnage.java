@@ -68,4 +68,9 @@ public class Personnage {
 	public void setBotAuto(boolean botAuto) {
 		this.botAuto = botAuto;
 	}
+	
+	public String toString(){	
+		return "Personnage: Nom:"+this.nom+" / Coords:"+this.coords[0]+"/"+this.coords[1]+
+				" / NbActions:"+this.nbAction+" / Auto:"+this.botAuto;
+	}
 }

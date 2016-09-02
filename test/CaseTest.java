@@ -44,14 +44,14 @@ public class CaseTest {
 	public void testPrioritePlayer1(){
 		Personnage perso1 = new Personnage("Player 1");
 		Case c1 = new Case(perso1,bombe,laCase,item);
-		assertEquals('1',c1.Priorite());
+		assertEquals('\u25B4',c1.Priorite());
 	}
 	
 	@Test
 	public void testPrioritePlayer2(){
 		Personnage perso2 = new Personnage("Player 2");
 		Case c2 = new Case(perso2,bombe,laCase,null);
-		assertEquals('2',c2.Priorite());
+		assertEquals('\u25B5',c2.Priorite());
 	}
 	
 	@Test
@@ -114,13 +114,13 @@ public class CaseTest {
 	public void testPriorite1(){
 		char laCase2 = 'I';
 		Case c2 = new Case(perso,bombe,laCase2,item);
-		assertEquals('I', c2.Priorite());
+		assertEquals('\u25A0', c2.Priorite());
 	}
 	
 	@Test
 	public void testPriorite2(){
 		char laCase2 = 'D';
 		Case c2 = new Case(perso,bombe,laCase2,item);
-		assertEquals('D', c2.Priorite());
+		assertEquals('\u25A1', c2.Priorite());
 	}
 }
