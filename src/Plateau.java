@@ -6,8 +6,6 @@ public class Plateau {
 	private int longueur;
 	private int largeur;
 	private String map;
-	public Case vide;
-	private Case murD;
 	private Case murI;
 
 	public Plateau(int longueur, int largeur) {
@@ -15,8 +13,6 @@ public class Plateau {
 		this.longueur = longueur;
 		this.largeur = largeur;
 		
-		vide = new Case(null, null, 'V', null);
-		murD = new Case(null, null, 'D', null);
 		murI = new Case(null, null, 'I', null);
 		
 
@@ -27,21 +23,19 @@ public class Plateau {
 		this.longueur = 10;
 		this.largeur = 10;
 		
-		vide = new Case(null, null, 'V', null);
-		murD = new Case(null, null, 'D', null);
 		murI = new Case(null, null, 'I', null);
 		Case o = new Case(one, null, '1', null);
 		Case t = new Case(two, null, '2', null);
 
 		this.theMap = new Case[][] { { murI, murI, murI, murI, murI, murI, murI, murI, murI, murI },
-				{ murI, o, vide, murD, murD, murD, murD, murD, vide, murI },
-				{ murI, vide, murI, vide, murD, murD, murD, murD, murD, murI },
-				{ murI, vide, vide, murI, vide, murI, murI, vide, vide, murI },
-				{ murI, murD, murD, murD, murD, murI, murD, murD, murD, murI },
-				{ murI, murD, murD, murD, murI, murD, murD, murD, murD, murI },
-				{ murI, vide, vide, murI, murI, vide, murI, vide, vide, murI },
-				{ murI, murD, murD, murD, murD, murD, vide, murI, vide, murI },
-				{ murI, vide, murD, murD, murD, murD, murD, vide, t, murI },
+				{ murI, o, new Case(null, null, 'V', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'V', null), murI },
+				{ murI, new Case(null, null, 'V', null), murI, new Case(null, null, 'V', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), murI },
+				{ murI, new Case(null, null, 'V', null), new Case(null, null, 'V', null), murI, new Case(null, null, 'V', null), murI, murI, new Case(null, null, 'V', null), new Case(null, null, 'V', null), murI },
+				{ murI, new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), murI, new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), murI },
+				{ murI, new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), murI, new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), murI },
+				{ murI, new Case(null, null, 'V', null), new Case(null, null, 'V', null), murI, murI, new Case(null, null, 'V', null), murI, new Case(null, null, 'V', null), new Case(null, null, 'V', null), murI },
+				{ murI, new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'V', null), murI, new Case(null, null, 'V', null), murI },
+				{ murI, new Case(null, null, 'V', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'D', null), new Case(null, null, 'V', null), t, murI },
 				{ murI, murI, murI, murI, murI, murI, murI, murI, murI, murI } };
 	}
 
