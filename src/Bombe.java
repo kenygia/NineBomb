@@ -15,6 +15,14 @@ public class Bombe
 		this.coords=coords;
 	}
 	
+	public void setPortee(int portee) {
+		this.portee = portee;
+	}
+
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+
 	public int[] getCoords(){
 		return this.coords;
 	}
@@ -40,6 +48,24 @@ public class Bombe
 		if (this.counter >= 1 )
 			this.counter = this.counter - 1;
 		
+	}
+	
+	public void exploser(Case[][] tab){
+		for(int i=0; i<tab.length; i++){
+			for(int j=0; j<tab.length; j++){
+				if(tab[i][j].getBombe().name=='B'){
+					if(tab[i][j].getBombe().counter==0){
+						if(tab[i-1][j].getLaCase()=='D'){
+							tab[i-1][j].getLaCase()='V';
+						}
+					}
+				}
+			}
+		}
+	}
+
+	public void setName(char name) {
+		this.name = name;
 	}
 }
 
