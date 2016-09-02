@@ -107,4 +107,8 @@ public class Plateau {
 			//this.bombes.get(i).explosion;
 		}
 	}
+	
+	public Case[][] getMap(){
+		return this.theMap;
+	}
 }
